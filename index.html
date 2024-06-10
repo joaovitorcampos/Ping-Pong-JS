@@ -58,7 +58,7 @@
             y: 100,
             w: line.w,
             h:200,
-            speed: 5,
+            speed: 3,
             _move: function() {//Função para mover a raquete baseado na posição da bola
                 if (this.y + this.h / 2 < ball.y + ball.r) {
                     this.y += this.speed; 
@@ -67,7 +67,9 @@
                 }
             },
             _speedUp: function() {//Aumenta a velocidade da raquete direita
-                this.speed+=2;
+                if (this.speed <=6) {
+                this.speed+=1;
+                }
             },
             draw: function () {//Desenha a raquete
                 canvasCtx.fillStyle ="#ffffff";
